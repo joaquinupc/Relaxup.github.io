@@ -1,0 +1,654 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 0;
+    background-color: #f4f4f9;
+    max-width: 1600px; /* para limitar el ancho máximo del contenido */
+    margin: 0 auto; /* para centrar el contenido en pantallas anchas */
+}
+
+header {
+    background-color: #ff9800;
+    color: #fff;
+    padding: 1px 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    max-width: 1000px; /* para limitar el ancho máximo del contenido del encabezado */
+    margin: 0 auto; /* para centrar el contenido del encabezado */   
+}
+
+header h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s;
+    display: block;
+    padding: 20px;
+}
+
+nav ul li a:hover {
+    color: #333;
+}
+
+section {
+    padding: 10px 5px;
+    margin-top: 10px;
+    margin: -5px; /* Eliminar espacio entre secciones */
+}
+
+section h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+section .container {
+    max-width: 2000px; /* para limitar el ancho máximo del contenido de las secciones */
+    margin: 0 auto; /* para centrar el contenido de las secciones */
+}
+
+#inicio .text-with-image {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 100px 0;
+}
+
+#inicio .text-with-image .text-content {
+    max-width: 53%;
+}
+
+#inicio .text-with-image img {
+    max-width: 500%;
+    margin-left: 5px;
+}
+
+section#inicio.background1 {
+    background-image: url('imagenes/background1.jpg');
+    background-size:  100% 50%;
+    background-position: center;
+    color: white;
+    text-align: left;
+}
+
+section#beneficios.background2 {
+    background-image: url('imagenes/background2.jpg');
+    background-size: cover;
+    background-position: center;
+    color: rgb(0, 0, 0);
+    text-align: left;
+}
+
+section#inicio.background3 {
+    background-image: url('imagenes/background3.jpg');
+    background-size:  100% 100%;
+    background-position: center;
+    color: white;
+    text-align: left;
+}
+
+
+section#inicio .intro h2 {
+    font-size: 4em;
+    color: #000;
+    margin: 10px;
+}
+
+section#inicio .intro p {
+    font-size: 1.2em;
+    margin: 20px 18px;
+    color: #000;
+}
+
+section#inicio .intro button.download-button {
+    background-color: #ff9800;
+    border: none;
+    padding: 15px 30px;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
+    display: block;
+    margin: 50px auto;
+}
+
+section#inicio .intro button.download-button:hover {
+    background-color: #e68900;
+}
+
+.text-with-image {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    gap: 30px;
+}
+
+.text-with-image .text-content {
+    max-width: 60%;
+}
+
+.text-with-image img {
+    width: 300px;
+    transition: transform 0.3s;
+}
+
+.text-with-image img:hover {
+    transform: scale(1.1);
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.image-container {
+    flex: 1 0 calc(33.33% - 20px);
+    margin: -5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.image-container:hover img {
+    transform: scale(1.1);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.image-container:hover .overlay {
+    opacity: 1;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.footer-links a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #ff9800;
+}
+
+.footer-social a {
+    margin: 0 10px;
+}
+
+.footer-social img {
+    width: 30px;
+    transition: transform 0.3s;
+}
+
+.footer-social img:hover {
+    transform: scale(1.1);
+}
+
+.intro {
+    text-align: left;
+    margin: 0 280px;
+}
+
+#beneficios .intro {
+    text-align: left;
+    margin: 0 280px;
+    padding-bottom: 50px; /* Agregar espacio al final del texto */
+}
+
+.animated-image {
+    width: 300px;
+    transition: transform 0.3s;
+    animation: growAndRotate 5s infinite;
+}
+
+@keyframes growAndRotate {
+    0%, 100% {
+        transform: scale(1) rotateY(0deg);
+    }
+    50% {
+        transform: scale(1.4) rotateY(360deg);
+    }
+}
+
+.rounded-image-left {
+    border-radius: 50%;
+    float: left;
+    margin-right: 20px;
+}
+
+.rounded-image-right {
+    border-radius: 100%;
+    float: right;
+    margin-left: 100px;
+}
+
+
+#quienes-somos .container,
+#nuestra-mision .container,
+#nuestra-vision .container {
+    margin: 100px 280px;
+}
+
+#imagen-full-width img {
+    width: 100%;
+    height: auto;
+}
+
+#quienes-somos .text-content,
+#nuestra-mision .text-content,
+#nuestra-vision .text-content {
+    max-width: 53%;
+    margin-right: 50px;
+}
+
+#quienes-somos img,
+#nuestra-mision img,
+#nuestra-vision img {
+    width: 900px; /* Ajuste el tamaño de la imagen */
+    height: 300px; /* Ajuste el tamaño de la imagen */
+    border-radius: 50%; /* Hace que las imágenes se vean más redondas */
+    overflow: hidden; /* Evita que las imágenes se salgan del círculo */
+}
+
+section#nuestra-mision.background2 {
+    background-color: #d7d7d7; /* Cambia el color de fondo a gris */
+}
+
+section.servicio1 {
+    background-image: url('imagenes/servicio1.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 200px 0; /* Aumenta el padding para hacer la sección más alta */
+    margin: -5px;
+}
+
+section.servicio2 {
+    background-image: url('imagenes/servicio2.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 200px 0; 
+    margin: -5px;
+}
+
+section.servicio3 {
+    background-image: url('imagenes/servicio3.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 200px 0; 
+    margin: -5px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.intro h3 {
+    font-size: 4.5em;
+    margin-bottom: 10px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Agrega sombra al texto para mejor legibilidad */
+}
+
+.intro p1 {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+}
+
+.footer-container {
+    padding: 10px 20px;
+}
+
+
+/* Diseño de la página planes.html */
+section.planes {
+    background-image: url('imagenes/FondoPlanes.jpg'); 
+    background-size: cover;
+    background-position: center;
+    padding: 50px 20px;
+    text-align: center;
+    color: white; 
+}
+
+.plan-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Permite que los planes se ajusten en pantallas pequeñas */
+    margin-top: 50px;
+}
+
+.plan {
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente para mejor legibilidad */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 50px;
+    width: 300px;
+    text-align: center;
+    color: #333; /* Color del texto en los planes */
+}
+
+/* Título de la sección de planes */
+section.planes h2 {
+    font-size: 3.5em;
+    margin-bottom: 50px;
+    text-align: center;
+    color: rgb(72, 72, 72);
+ }
+
+
+.plan h3 {
+    font-size: 1.8em;
+    color: #ff9800;
+    margin-bottom: 10px;
+}
+
+.plan p {
+    font-size: 1.2em;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.plan ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+}
+
+.plan ul li {
+    margin: 10px 0;
+    font-size: 1em;
+}
+
+.plan button {
+    background-color: #ff9800;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.plan button:hover {
+    background-color: #e68900;
+}
+
+
+section#entrar.EntrarFondo {
+    background-image: url('imagenes/FondoEntrar.jpg'); 
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: left;
+}
+
+
+section#entrar .intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Establece la altura de la sección al 100% del viewport */
+}
+
+section#entrar .intro .text-content {
+    max-width: 400px;
+    margin: 0 auto; /* Centra el contenido dentro de la sección */
+}
+
+section#entrar .intro p {
+    margin-top: 20px; /* Añade espacio arriba de la frase */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: right;
+}
+
+form {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-group input {
+    width: calc(100% - 25px); /* Reducir el ancho del input */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+
+button[type="submit"] {
+    background-color: #ff9800;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+button[type="submit"]:hover {
+    background-color: #e68900;
+}
+
+p a {
+    color: #ff9800;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+/* Agrega esta sección al final de tu archivo styles.css */
+
+section#registro.FondoRegistro {
+    background-image: url('imagenes/FondoRegistro.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-color: #fafafa;
+    text-align: center;
+    padding: 100px 0;
+}
+
+
+section#registro .intro {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+section#registro h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+section#registro p {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+section#registro form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: hsl(0, 0%, 91%);
+}
+
+section#registro .form-group {
+    width: 100%;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+section#registro label {
+    display: block;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    color: #000000;
+}
+
+section#registro input {
+    width: calc(100% - 25px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+section#registro button[type="submit"] {
+    background-color: #ff9800;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+    width: 50%;
+}
+
+section#registro button[type="submit"]:hover {
+    background-color: #ff9800;
+}
+
+section#registro p a {
+    color:  #ff9800;
+    text-decoration: none;
+}
+
+section#registro p a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    section#registro .intro {
+        padding: 10px;
+    }
+
+    section#registro button[type="submit"] {
+        width: 100%;
+    }
+}
+
+/* Animación de slide-in desde la izquierda */
+.slide-in-left {
+    animation: slideInLeft 1s ease-in-out forwards;
+    opacity: 1; /* Mantener la opacidad al final de la animación */
+    transform: translateX(0); /* Mantener la posición final */
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Animación de slide-in desde la derecha */
+.slide-in-right {
+    animation: slideInRight 1s ease-in-out forwards;
+    opacity: 1; 
+    transform: translateX(0); 
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+
